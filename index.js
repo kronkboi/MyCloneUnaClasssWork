@@ -1,6 +1,19 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const testData = require('./lib/data.js');
+
+
+// Import Routes
+const baseRouter = require('./routes/base');
+const staffRouter = require('./routes/staff');
+
+// Cookies 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser("Ben is a God!!"));
+
+// need this before you can use req.body
+app.use(express.urlencoded({ extended: true })) 
 
 // set up handlebars view engine
 var handlebars = require('express-handlebars')

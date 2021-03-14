@@ -1,0 +1,19 @@
+
+
+<h3>Introduction our wonderful staff who are here waiting for your calls</h3>
+<div class="card-deck">
+  {{#each personlist}}
+    <div class="card">
+      <a href=/staff/{{this.name}}>
+<img class="card-image-top" src={{this.imageurl}} alt="photo of the person">
+
+     <h5 class="card-title">{{this.name}}</h5> </a>
+      </div>
+
+        {{!-- <div class="card bg-primary" style="width:400px">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the first card</p>
+    </div> --}}
+
+  {{/each}}
+</div>
