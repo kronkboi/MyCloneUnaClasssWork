@@ -23,6 +23,9 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
+app.use('/',baseRouter);
+app.use('/staff',staffRouter);
+
 app.get('/', function (req, res) {
     res.render('home');
 });
