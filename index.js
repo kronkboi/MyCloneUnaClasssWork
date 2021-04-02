@@ -15,6 +15,17 @@ app.use(cookieParser("Ben is a God!!"));
 // need this before you can use req.body
 app.use(express.urlencoded({ extended: true })) 
 
+session = require('express-session');
+
+app.use(session(
+    {secret: "una is great!!", 
+    cookie: { maxage: 6000},
+    resave: false,
+    saveUninitialized: false
+  }))
+
+
+
 // set up handlebars view engine
 var handlebars = require('express-handlebars')
 .create({ defaultLayout:'main' });
@@ -28,21 +39,6 @@ app.use('/staff',staffRouter);
 
 app.get('/', function (req, res) {
     res.render('home');
-});
-
-app.get('/',  (req, res) => {
-    res.type('text/plain');
-    res.send('Covid Holiday Tours');
-});
-
-app.get('/about',  (req, res) => {
-    res.type('text/plain');
-    res.send('About Our Holidays');
-});
-
-app.get('/contact',  (req, res) => {
-    res.type('text/plain');
-    res.send('Dont bother we never reply');
 });
 
 // Custom 404 page
