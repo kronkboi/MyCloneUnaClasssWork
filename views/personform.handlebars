@@ -1,18 +1,18 @@
-<form>
-    <div class="form-group">
+<form method="POST">
+
+
+    {{!-- <div class="form-group">
         <label for='firstname'>First Name</label>
-        <input type=text id='firstname' name='firstname' class='form-control'>
+        <input type=text id='firstname' name='name' class='form-control'>
     </div>
     <div class="form-group">
-        <label for='surname'>Surname</label>
-        <input type=text id='surname' name='surname' class='form-control'>
-    </div>
+        <label for='dob'>Date of Birth</label>
+        <input type=date id='dob' name='dob' class='form-control'>
+    </div> --}}
+
+{{> personformfields}}
+
     <button type=submit class="btn btn-primary">Add Person</button>
 
-    </div>
+
 </form>
-
-<h3> Data Entered</h3>
-<h2>Firstname: {{firstname}}</h2>
-<h2>Surname: {{surname}} </h2>
-

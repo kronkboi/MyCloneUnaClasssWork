@@ -1,29 +1,20 @@
 {
-  "name": "firstapp",
+  "name": "app1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1",
-    "express-session": "^1.17.1"
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/isligoserverside/initialwork-kronkboi.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/isligoserverside/initialwork-kronkboi/issues"
-  },
-  "homepage": "https://github.com/isligoserverside/initialwork-kronkboi#readme"
+  "license": "ISC"
 }

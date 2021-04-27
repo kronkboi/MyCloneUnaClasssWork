@@ -1,1 +1,43 @@
 <h2> We are all at home so don't bother</h2>
+{{> news}}
+
+<h3> Demo of playing with Context</h3>
+
+{{!-- <ol>
+    {{#each data}}
+
+    <li>
+        <strong> {{@key}} :</strong>
+        <ol>
+            {{#each this}}
+            <li>
+                {{this}}
+            </li>
+            {{else}}
+            {{this}}
+            {{/each}}
+        </ol>
+    </li>
+    {{/each}}
+</ol> --}}
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Value</th>
+
+    <tr>
+        {{#each data}}
+    <tr>
+        <td>{{@key}}</td>
+        {{#each this}}
+        {{this}} <br>
+        {{else}}
+        {{this}}
+        {{/each}}
+        <td>{{this}}</td>
+    </tr>
+    {{/each}}
+
+
+</table>

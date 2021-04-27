@@ -1,68 +1,100 @@
 {{!-- this is standard HTML template. The HTML on this page will be used for all
-of the other handlebars files. They will 'inject' their HTML into the part 
+of the other handlebars files. They will 'inject' their HTML into the part
 of the tamplate with {{body}} --}}
 
 <!doctype html>
 <html>
 
 <head>
- <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{!-- Note if the view is called with a context that has a property
+  tags then those tags will be added here also--}}
+
+  <meta name="keywords" content="Travel, Covid, Comedy, {{tags}}">
 
 
-    <title>Covid Travel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="/styles/style.css" rel="stylesheet" >
+  <title>Covid Travel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="/styles/style.css" rel="stylesheet">
 
 <body>
 
-<div class=.container>
+  <div class=.container>
     <header>
-        <a href = "/">
-      <img src="/images/sample.jpg" alt="A logo">
+      <a href="/">
+        <img src="/images/sample.png" alt="A lovely logo">
       </a>
-   </header>
+    </header>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    {{!-- <a class="navbar-brand" href="#">has this changed</a> --}}
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="mainnavbar">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/staff">Our Staff</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        {{!-- <a class="navbar-brand" href="#">has this changed</a> --}}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="mainnavbar">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Our Staff</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </div>
+    </nav>
+
+
+    {{#if flash}}
+    <div class="alert alert-dismissible alert-{{flash.type}} " role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+      <strong>{{flash.intro}}</strong> {{{flash.message}}}
     </div>
-  </div>
-</nav>
-
-
-
+    {{/if}}
 
 
     {{{body}}}
 
 
-    <footer> &copy; Unlce Beanis Is Watching You </footer>
-    </div>
+    <footer> &copy; Uncle Benis </footer>
+  </div>
+  {{!-- <div class="newsWidget">
+    {{#each partials.newsContext}}
+    <div>
+      <h3>{{heading}}</h3>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      {{body}}
+      </a>
+    </div>
+    {{/each}}
+
+  </div>
+  <div class="newsWidget"> --}}
+
+<h2> this is from the layout </h2>
+{{!--    
+ {{layoutContext}} --}}
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

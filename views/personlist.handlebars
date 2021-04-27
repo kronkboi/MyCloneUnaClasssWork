@@ -4,7 +4,7 @@
 <div class="card-deck">
   {{#each personlist}}
     <div class="card">
-      <a href=/staff/{{this.name}}>
+      <a href=/staff/{{urlencodetext this.name}}>
 <img class="card-image-top" src={{this.imageurl}} alt="photo of the person">
 
      <h5 class="card-title">{{this.name}}</h5> </a>

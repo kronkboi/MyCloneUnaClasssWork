@@ -1,0 +1,33 @@
+{
+  "_id": "5ad88534e3632e1a35a58d00",
+  "customerID": 12345,
+  "name": {
+    "first": "John",
+    "last": "Doe"
+  },
+  "address": [
+    {
+      "location": "work",
+      "address": {
+        "street": "16 Hatfields",
+        "city": "London",
+        "postal_code": "SE1 8DJ"
+      },
+      "country": "United Kingdom",
+      "geo": {
+        "type": "Point",
+        "coord": [51.5065752, -0.109081]
+      }
+    }
+  ],
+  "email": "john.doe@acme.com",
+  "phone": [
+    {
+      "location": "work",
+      "number": "+44-1234567890"
+    }
+  ],
+  "dob": "1977-04-01T05:00:00Z",
+  "interests": ["devops", "data science"],
+  "annualSpend": 1292815.75
+}
